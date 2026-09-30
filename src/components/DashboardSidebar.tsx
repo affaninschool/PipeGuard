@@ -86,14 +86,21 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                 key={item.id}
                 id={`sidebar-nav-${item.id}`}
                 onClick={() => onSelectSection(item.id)}
-                className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all text-left cursor-pointer ${
+                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all text-left cursor-pointer ${
                   isActive
                     ? 'bg-sky-100 text-sky-950 font-semibold shadow-2xs border border-sky-200/80'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
-                <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-sky-600' : 'text-slate-400'}`} />
-                <span>{item.label}</span>
+                <div className="flex items-center gap-3">
+                  <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-sky-600' : 'text-slate-400'}`} />
+                  <span>{item.label}</span>
+                </div>
+                {item.id === 'leak-lab' && (
+                  <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-cyan-100 text-cyan-800 border border-cyan-300">
+                    LAB
+                  </span>
+                )}
               </button>
             );
           })}

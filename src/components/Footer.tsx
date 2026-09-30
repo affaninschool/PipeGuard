@@ -125,10 +125,10 @@ export const Footer: React.FC<FooterProps> = ({
                   className="w-full text-left px-3 py-2 rounded-lg bg-slate-800/60 hover:bg-slate-800 border border-slate-700/60 hover:border-cyan-500/40 text-slate-300 hover:text-cyan-300 transition-all flex items-center justify-between group cursor-pointer text-[11px] font-mono"
                 >
                   <span className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 group-hover:animate-ping" />
-                    <span>Replay Calibration Sequence</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    <span>View Welcome Screen</span>
                   </span>
-                  <span className="text-[10px] text-slate-500 group-hover:text-cyan-400">0–100%</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors" />
                 </button>
               )}
             </div>

@@ -16,7 +16,8 @@ import {
   Wind, 
   Zap, 
   ShieldCheck, 
-  Gauge
+  Gauge,
+  Crosshair
 } from 'lucide-react';
 
 interface DashboardViewProps {
@@ -288,6 +289,32 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
               {/* 📈 TWO DYNAMIC TREND CHARTS IN WATER BLUE */}
               <DashboardTrendCharts scenario={scenario} />
+
+              {/* 🧪 FEATURE BANNER: JUMP DIRECTLY TO INTERACTIVE LEAK LAB */}
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-cyan-500/30 p-6 sm:p-7 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6 text-white">
+                <div className="space-y-1.5 text-center sm:text-left">
+                  <div className="flex items-center justify-center sm:justify-start gap-2">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-cyan-400">
+                      Physical Acoustic Waveguide Sandbox
+                    </span>
+                  </div>
+                  <h4 className="font-display font-bold text-xl sm:text-2xl tracking-tight text-white">
+                    Interactive Leak Lab &amp; TDOA Pinpointer
+                  </h4>
+                  <p className="text-xs font-mono text-slate-300 max-w-xl">
+                    Test the 5.0m acoustic waveguide rig: drag leaks, adjust line pressure, test orifice geometries, and observe real-time TDOA cross-correlation pinpoint the breach.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setActiveSection('leak-lab')}
+                  className="px-5 py-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-xs font-mono transition-all flex items-center gap-2 shrink-0 shadow-lg shadow-cyan-500/25 active:scale-95 cursor-pointer"
+                >
+                  <Crosshair className="w-4 h-4 text-slate-950" />
+                  <span>Launch Interactive Lab →</span>
+                </button>
+              </div>
             </div>
           )}
 
